@@ -13,8 +13,6 @@ function getRandomInt(max) {
 const Somewhere = () => {
     var [startGame, setStartGame] = useState(false);
     var gameImage=ids[rndId];
-    console.log('hej')
-    console.log(startGame)
     if (startGame === false) {
         return (
         

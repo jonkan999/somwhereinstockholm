@@ -14,7 +14,7 @@ import CountdownTimer from './Components/CountdownTimer/CountdownTimer'
 mapboxgl.accessToken = 'pk.eyJ1Ijoiam9ua2FueDMiLCJhIjoiY2t6a2NpamRlMHBnNzJwa2VwMXZienQxZSJ9.8Or2IqnhqXW72AMn6PndLg';
 
 const defaultStart= [18.036,59.316] 
-const timeAvailable = 10
+const timeAvailable = 30
 
 
 
