@@ -6,12 +6,12 @@ import { ids } from './ids.js';
 function getRandomInt(max) {
     return Math.floor(Math.random() * max);
   }
-  
- let rndId = getRandomInt(ids.length);
+
 
 
 const Somewhere = () => {
     var [startGame, setStartGame] = useState(false);
+    let rndId = getRandomInt(ids.length);
     var gameImage=ids[rndId];
     if (startGame === false) {
         return (
