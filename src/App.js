@@ -116,12 +116,7 @@ export default class App extends React.PureComponent {
 			
 			
 			this.setState({score: score})
-			if (this.state.showScore===true) {
-				setTimeout(
-					() => this.props.startInd(false), 
-					10000
-				  );
-		   }
+
 		}
 	}
 	
