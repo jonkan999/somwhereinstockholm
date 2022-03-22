@@ -14,7 +14,7 @@ import CountdownTimer from './Components/CountdownTimer/CountdownTimer'
 mapboxgl.accessToken = 'pk.eyJ1Ijoiam9ua2FueDMiLCJhIjoiY2t6a2NpamRlMHBnNzJwa2VwMXZienQxZSJ9.8Or2IqnhqXW72AMn6PndLg';
 
 const defaultStart= [18.036,59.316] 
-const timeAvailable = 30
+const timeAvailable = 60
 
 
 
@@ -71,10 +71,9 @@ export default class App extends React.PureComponent {
 		timeAvailable*1000
 	  );
 
-	  this.setState({ iframeURL: this.props.dataFromParent })
-	  console.log(this.state.iframeURL)
+	this.setState({ iframeURL: this.props.dataFromParent })
 
-  }
+	}
   
       handleCallback = (position,pov) =>{
         this.setState({spriteLat: position.lat,
@@ -102,8 +101,18 @@ export default class App extends React.PureComponent {
 
 			let score = turf.distance([lng, lat], [this.state.spriteLng, this.state.spriteLat],'kilometers').toFixed(2);
 
-			//=points
 
+			const markerPlayer = new mapboxgl.Marker({
+				color: 'teal'
+				})
+			.setLngLat([lng, lat])
+			.addTo(this.map);
+
+			const markerTarget = new mapboxgl.Marker({
+				color: 'hotpink'
+				})
+			.setLngLat([this.state.spriteLng, this.state.spriteLat])
+			.addTo(this.map);
 			
 			
 			this.setState({score: score})
@@ -112,7 +121,6 @@ export default class App extends React.PureComponent {
 					() => this.props.startInd(false), 
 					5000
 				  );
-				
 		   }
 		}
 	}
@@ -125,20 +133,16 @@ export default class App extends React.PureComponent {
   let exp_ind;
 	if (this.state.showScore===true) {
 		exp_ind=
-		 <h1 style={{position: 'absolute',fontSize: '3vh', top: '68vh',left:'5vw',width: '50vw',height: '5vw',Zindex:'2'}}>You were {this.state.score} km from the target</h1>;
+		 <h1 style={{position: 'absolute',fontSize: '3vh', top: '65vh',left:'5vw',width: '50vw',height: '5vw',Zindex:'2'}}>You were {this.state.score} km from the target, good job!</h1>;
 	}
     return (
 	<div>
 		<Street parentCallback = {this.handleCallback.bind(this)}  imageId={this.state.iframeURL} />
 		<div ref={this.mapContainer} className="map-container" />
-		<img src={cross} alt="cross" style={{position: 'absolute',display: 'block', top: '79vh',left:'47.5vw',width: '5vw',height: '5vw',Zindex:'2'}}/>
+		<img src={cross} alt="cross" style={{position: 'absolute',display: 'block', top: '77.43vh',left:'47.52vw',width: '5vw',height: '2.5vh',Zindex:'2'}}/>
 		<button className="add-btn" onClick={this.showScore}>Lock in</button>
 		{exp_ind}
 		<CountdownTimer countdownTimestampMs={timeAvailable} showScore= {this.state.showScore}/>
-	
-		
-		
-			
 	</div>
 
     );

@@ -16,8 +16,8 @@ const Somewhere = () => {
     if (startGame === false) {
         return (
         
-            <div className="test">
-                <h2 style={{ padding: "9.7vh 5vw", textAlign: "center",fontSize: "3vh", color: "white"}}> Somewhere in Stockholm </h2>  
+            <div className='start-page'>
+                <h2 style={{ padding: "9.2vh 5vw", textAlign: "center",fontSize: "3vh", color: "white"}}> Somewhere in Stockholm </h2>  
                 <p style={{ padding: "2vh 5vw", textAlign: "center",fontSize: "2vh", color: "white"}}> 
 				Find out where you are at before the time runs out. <br/> Good luck!
 				</p>

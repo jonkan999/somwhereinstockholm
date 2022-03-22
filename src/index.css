@@ -2,7 +2,7 @@
 .Counter {
     position: absolute; 
     z-index: 3;
-    top: 65vh;
+    top: 60vh;
     left: 5vw;
 	width: 20vw;
     color: red;
@@ -16,10 +16,10 @@
 .map-container {
     position: absolute; 
     z-index: -1;
-    top: 63vh;
+    top: 58vh;
     left: 0;
     width: 100vw;
-    height: 37vh;
+    height: 42vh;
 
 }
 
@@ -30,7 +30,7 @@
     left:0;
     top: 0;
     bottom: 0;
-    height: 63vh;
+    height: 58vh;
     width: 100vw;
     padding: 0;
     margin: 0;
@@ -44,7 +44,7 @@
 	  background-color: #3D3836;
   color: white;
     z-index: 1;
-    top: 90vh;
+    top: 82vh;
     left: 40vw;
 	width: 20vw;
 	opacity: 50;
@@ -77,10 +77,12 @@
 	
 }
 
-.test {
-    
+.start-page {
+    position: absolute;
     width: 100vw;
     height: 100vh;
+    top:0;
+    left:0;
     background-image: url('./icons/startimgluna.png');
 	background-size: cover;
     background-repeat: no-repeat;
