@@ -21,7 +21,7 @@ const Somewhere = () => {
                 <p style={{ padding: "2vh 5vw", textAlign: "center",fontSize: "2vh", color: "white"}}> 
 				Find out where you are at before the time runs out. <br/> Good luck!
 				</p>
-                <button className="start-btn" onClick={() => setStartGame(true)}>Start a game</button>
+                <button className="start-btn" onClick={() => setStartGame(true)}>Start the game</button>
                 
             </div>
         );

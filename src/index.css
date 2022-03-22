@@ -52,6 +52,19 @@
 	
 }
 
+.reset-btn {
+	position: absolute; 
+	  background-color: #3D3836;
+  color: white;
+    z-index: 1;
+    top: 82vh;
+    left: 40vw;
+	width: 20vw;
+	opacity: 50;
+	cursor: pointer;
+	
+}
+
 .start-btn {
 	position: absolute; 
 	background-color: #3D3836;

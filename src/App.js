@@ -119,7 +119,7 @@ export default class App extends React.PureComponent {
 			if (this.state.showScore===true) {
 				setTimeout(
 					() => this.props.startInd(false), 
-					5000
+					10000
 				  );
 		   }
 		}
@@ -133,16 +133,24 @@ export default class App extends React.PureComponent {
   let exp_ind;
 	if (this.state.showScore===true) {
 		exp_ind=
-		 <h1 style={{position: 'absolute',fontSize: '3vh', top: '65vh',left:'5vw',width: '50vw',height: '5vw',Zindex:'2'}}>You were {this.state.score} km from the target, good job!</h1>;
+		<div>
+		 <h1 style={{position: 'absolute',fontSize: '3vh', top: '65vh',left:'5vw',width: '50vw',height: '5vw',Zindex:'2'}}>You were {this.state.score} km from the target, good job!</h1>//
+		 <button className="reset-btn" onClick={() => { this.props.startInd(false) }}>Try again</button>
+		</div>
+		;
+		 
+	} else {
+		
+		exp_ind = <button className="add-btn" onClick={this.showScore}>Lock in</button>;
 	}
     return (
 	<div>
 		<Street parentCallback = {this.handleCallback.bind(this)}  imageId={this.state.iframeURL} />
 		<div ref={this.mapContainer} className="map-container" />
 		<img src={cross} alt="cross" style={{position: 'absolute',display: 'block', top: '77.43vh',left:'47.52vw',width: '5vw',height: '2.5vh',Zindex:'2'}}/>
-		<button className="add-btn" onClick={this.showScore}>Lock in</button>
-		{exp_ind}
 		<CountdownTimer countdownTimestampMs={timeAvailable} showScore= {this.state.showScore}/>
+		{exp_ind}
+		
 	</div>
 
     );
